@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {todoItemType} from "../types/type";
 import TodoText from "./TodoText";
+import {Checkbox, Input , Button} from "antd";
 
 const TodoItem = ({todos, setTodos ,task ,item , keys}:todoItemType) => {
     return (
@@ -12,20 +13,20 @@ const TodoItem = ({todos, setTodos ,task ,item , keys}:todoItemType) => {
                 todos={todos}
                 id={item.id}
             />
-            <button
-                onClick={()=>{
+            <Checkbox
+                onChange={()=>{
                     setTodos(todos.map(todo => todo.id===item.id?
                         {id:item.id , todoTask: item.todoTask , done : !item.done}
                         : todo))
                 }}
-            >V</button>
+            />
 
-            <button
+            <Button
                 disabled = {task === item.todoTask || !item.done}
                 onClick={()=>{
                     setTodos(todos.filter(filteredItem => filteredItem.id !== item.id))
                 }}
-            >X</button>
+            >X</Button>
         </li>
     );
 };
