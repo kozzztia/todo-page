@@ -14,12 +14,7 @@ const TodoText = ({text,setTodos,todos ,id}:todoTextType) => {
                         }}
                     >{text}</p>
                     :
-                    <p style={{display:"flex", flexDirection:"row"}}
-                       onFocus={()=>{
-                           setChange(false)
-                       }
-                       }
-                    >
+                    <p style={{display:"flex", flexDirection:"row"}}>
                         <input type="text"
 
                             onChange={(e)=>{
@@ -40,6 +35,7 @@ const TodoText = ({text,setTodos,todos ,id}:todoTextType) => {
                                     todo
                                 ))
                                 setNewValue("")
+                                setChange(false)
                             }
 
                         }

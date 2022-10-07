@@ -26,9 +26,6 @@ const  App:FC = () => {
                    value={task}
                 />
                 <button
-                    disabled={
-                        task.length<3||todos.some(item => item.todoTask === task)
-                }
                     type="submit">
                     add
                 </button>
