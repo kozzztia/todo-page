@@ -2,9 +2,11 @@ import React, {FC, useCallback, useState} from 'react';
 import './App.css';
 import {todoType} from "./types/type";
 import {createId} from "./support/support";
+import FormContainer from "./components/FormContainer"
 import TodoList from "./components/TodoList";
-import { Button, Checkbox, Form, Input } from 'antd';
+import {Button, Checkbox, Form, Input, Rate} from 'antd';
 import 'antd/dist/antd.css';
+
 
 const  App:FC = () => {
 
@@ -15,32 +17,21 @@ const  App:FC = () => {
         {id:3,todoTask:"learn More More...",done:true}
     ])
 
-    const handleFormSubmit=(e : React.SyntheticEvent<EventTarget>)=>{
+    const handleFormSubmit=(e : React.SyntheticEvent<EventTarget>):void=>{
             e.preventDefault()
             addTodos()
             setTask("")
     }
-    const addTodos = useCallback(():void=>{
+    const addTodos = useCallback(() =>{
             setTodos((prev) => [...prev, {id: createId() , todoTask : task , done: false}])
     },[todos])
 
   return (
         <div className="App">
-            <form className="header"
-                onSubmit={(e)=>handleFormSubmit(e)}
-                >
-                <Input type="text"
-                   placeholder="insert your task"
-                   onChange={(e)=>{
-                       setTask(e.target.value)
-                   }}
-                   value={task}
-                />
-                <Button htmlType="submit" type="primary">
-                    add
-
-                </Button>
-            </form>
+            <FormContainer
+                handleFormSubmit = {handleFormSubmit}
+                setTask = {setTask}
+            />
             <TodoList
                 task={task}
                 setTodos={setTodos}
