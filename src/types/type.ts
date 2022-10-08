@@ -7,6 +7,10 @@ export interface FormInterface {
     setTask : React.Dispatch<React.SetStateAction<string>>;
 }
 
+export interface SearchFormInterface {
+    searchValue : string;
+    setSearchValue : React.Dispatch<React.SetStateAction<string>>;
+}
 
 export type todoType = {
     id : number,
