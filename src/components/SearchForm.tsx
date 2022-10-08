@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { SearchOutlined } from '@ant-design/icons';
 import {Button ,Input} from "antd";
 import {SearchFormInterface} from "../types/type";
@@ -24,7 +24,8 @@ const SearchForm = ({searchValue , setSearchValue} : SearchFormInterface) => {
             />
             <Button
                 htmlType="submit"
-                type="primary" icon={<SearchOutlined />}>
+                type="primary"
+                icon={<SearchOutlined />}>
                 search
             </Button>
         </form>

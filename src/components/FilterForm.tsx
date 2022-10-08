@@ -1,16 +1,16 @@
-import React , {useState} from 'react';
-import { Radio  } from 'antd';
+import React  from 'react';
+import { Radio } from 'antd';
+import {FilterFormInterface} from "../types/type";
 
-const FilterForm = () => {
-    const [doneValue , setDoneValue] = useState(3)
+const FilterForm = ({filterValue , setFilterValue} : FilterFormInterface) => {
     return (
-        <form>
             <Radio.Group
                 onChange={(e)=>{
-                    setDoneValue(e.target.value)
-                    console.log(doneValue)
+                    setFilterValue(e.target.value)
+                    console.log(filterValue)
                 }}
-                value={doneValue}>
+                value={filterValue}
+            >
                 <Radio value={1}>
                     done
                 </Radio>
@@ -21,9 +21,6 @@ const FilterForm = () => {
                     all
                 </Radio>
             </Radio.Group>
-
-
-        </form>
     );
 };
 

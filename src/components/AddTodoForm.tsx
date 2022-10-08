@@ -1,6 +1,7 @@
 import React from 'react';
 import {FormInterface} from "../types/type";
 import {Button , Input} from "antd";
+import { PlusOutlined } from "@ant-design/icons";
 
 const AddTodoForm : React.FC<FormInterface> = ({setTask ,task ,handleFormSubmit} :FormInterface ) => {
     return (
@@ -22,6 +23,7 @@ const AddTodoForm : React.FC<FormInterface> = ({setTask ,task ,handleFormSubmit}
             <Button
                 htmlType="submit"
                 type="primary"
+                icon={<PlusOutlined />}
             >
                 add
             </Button>

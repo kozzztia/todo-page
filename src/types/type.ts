@@ -12,11 +12,21 @@ export interface SearchFormInterface {
     setSearchValue : React.Dispatch<React.SetStateAction<string>>;
 }
 
+export interface FilterFormInterface {
+    filterValue : number;
+    setFilterValue : React.Dispatch<React.SetStateAction<number>>
+
+}
+
 export type todoType = {
     id : number,
     todoTask : string,
     done : boolean,
 }
+
+
+
+
 
 
 
