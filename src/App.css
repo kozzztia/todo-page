@@ -1,7 +1,7 @@
 .App {
   text-align: center;
-  width:100vw;
-  height: 100vh;
+  width:400px;
+  height: auto;
   border: 1px solid black;
   margin: 0 auto;
   font-size: 20px;
@@ -14,6 +14,13 @@
   margin: 0;
   box-sizing: border-box;
   font-weight: bold;
+}
+form{
+  display: flex;
+  margin-bottom: 5px;
+}
+button{
+  min-width: 100px;
 }
 
 

@@ -1,9 +1,10 @@
-import React, {FC, useCallback, useState} from 'react';
+import React, {FC, useCallback, useEffect, useState} from 'react';
 import './App.css';
 import {todoType} from "./types/type";
 import {createId} from "./support/support";
-import FormContainer from "./components/FormContainer"
+import AddTodoForm from "./components/AddTodoForm"
 import TodoList from "./components/TodoList";
+import SearchForm from "./components/SearchForm"
 import {Button, Checkbox, Form, Input, Rate} from 'antd';
 import 'antd/dist/antd.css';
 
@@ -12,26 +13,24 @@ const  App:FC = () => {
 
     const [task , setTask] = useState<string>("")
     const [todos , setTodos] = useState<todoType[] | []>([
-        {id:1,todoTask:"learn",done:true},
-        {id:2,todoTask:"learnMore",done:true},
-        {id:3,todoTask:"learn More More...",done:true}
     ])
-
     const handleFormSubmit=(e : React.SyntheticEvent<EventTarget>):void=>{
             e.preventDefault()
-            addTodos()
+            setTodos((prev) => [...prev, {id: createId() , todoTask : task , done: false}])
             setTask("")
     }
-    const addTodos = useCallback(() =>{
-            setTodos((prev) => [...prev, {id: createId() , todoTask : task , done: false}])
-    },[todos])
 
   return (
         <div className="App">
-            <FormContainer
-                handleFormSubmit = {handleFormSubmit}
+            <AddTodoForm
                 setTask = {setTask}
+                task = {task}
+                handleFormSubmit = {handleFormSubmit}
             />
+            <SearchForm
+
+            />
+
             <TodoList
                 task={task}
                 setTodos={setTodos}

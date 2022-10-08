@@ -2,8 +2,9 @@ import React from "react"
 
 
 export interface FormInterface {
-    handleFormSubmit : ( e: React.SyntheticEvent<EventTarget>) => void;
-    setTask:React.Dispatch<React.SetStateAction<string>>;
+    handleFormSubmit : ( e: React.SyntheticEvent<EventTarget> | any) => void;
+    task : string;
+    setTask : React.Dispatch<React.SetStateAction<string>>;
 }
 
 
