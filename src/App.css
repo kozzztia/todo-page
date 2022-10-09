@@ -22,7 +22,10 @@ form{
   justify-content: center;
 }
 button{
-  min-width: 90px;
+  min-width: 50px;
+}
+li{
+  display: flex!important;
 }
 
 

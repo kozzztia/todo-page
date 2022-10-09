@@ -8,10 +8,14 @@ const AddTodoForm : React.FC<FormInterface> = ({setTask ,task ,handleFormSubmit}
         <form
             className = "form"
             onSubmit={(e)=>{
-                e.preventDefault()
-                handleFormSubmit(e)
-            }}
-        >
+                if(task.length>1){
+                    e.preventDefault()
+                    handleFormSubmit(e)
+                }else{
+                    e.preventDefault()
+                    return
+                }
+            }}>
             <Input
                 type = "text"
                 placeholder = "insert task"
@@ -24,9 +28,7 @@ const AddTodoForm : React.FC<FormInterface> = ({setTask ,task ,handleFormSubmit}
                 htmlType="submit"
                 type="primary"
                 icon={<PlusOutlined />}
-            >
-                add
-            </Button>
+            />
         </form>
     );
 };

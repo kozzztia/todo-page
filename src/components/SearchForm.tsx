@@ -26,7 +26,6 @@ const SearchForm = ({searchValue , setSearchValue} : SearchFormInterface) => {
                 htmlType="submit"
                 type="primary"
                 icon={<SearchOutlined />}>
-                search
             </Button>
         </form>
     );

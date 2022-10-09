@@ -7,7 +7,6 @@ const FilterForm = ({filterValue , setFilterValue} : FilterFormInterface) => {
             <Radio.Group
                 onChange={(e)=>{
                     setFilterValue(e.target.value)
-                    console.log(filterValue)
                 }}
                 value={filterValue}
             >

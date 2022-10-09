@@ -17,6 +17,21 @@ export interface FilterFormInterface {
     setFilterValue : React.Dispatch<React.SetStateAction<number>>
 
 }
+export interface TodoListContainerInterface {
+    todos: todoType[] | [],
+    handleCheckValue:handleCheckValueType,
+}
+export interface TodoButtonInterface {
+    checkedId:number,
+    handleCheckValue:handleCheckValueType,
+}
+export interface TodoCheckboxInterface {
+    checkedId:number,
+    handleCheckValue:handleCheckValueType,
+}
+
+export type handleCheckValueType = (todosId: number)=> void
+
 
 export type todoType = {
     id : number,
