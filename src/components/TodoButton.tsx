@@ -4,7 +4,8 @@ import TodoCheckbox from "./TodoCheckbox";
 import {DeleteOutlined} from "@ant-design/icons";
 import {TodoButtonInterface} from "../types/type";
 
-const TodoButton = ({checkedId ,handleCheckValue}:TodoButtonInterface)=> {
+
+const TodoButton = ({checkedId ,handleCheckValue , delDoneTodo}:TodoButtonInterface)=> {
     return (
         <div>
             <TodoCheckbox
@@ -12,6 +13,10 @@ const TodoButton = ({checkedId ,handleCheckValue}:TodoButtonInterface)=> {
                 handleCheckValue={handleCheckValue}
             />
             <Button
+                onClick={(e)=>{
+                    e.preventDefault()
+                    delDoneTodo(checkedId)
+                }}
                 type="primary"
                 icon={<DeleteOutlined />}
             />

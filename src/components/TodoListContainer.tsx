@@ -1,10 +1,11 @@
 import React from 'react';
 import {List, Typography} from "antd";
-import {handleCheckValueType, TodoListContainerInterface} from "../types/type";
+import {TodoListContainerInterface} from "../types/type";
 import TodoButton from "./TodoButton";
 import TodoText from "./TodoText";
+import WorkStatus from "./WorkStatus";
 
-const TodoListContainer = ({todos ,handleCheckValue}:TodoListContainerInterface) => {
+const TodoListContainer = ({todos ,handleCheckValue , delDoneTodo}:TodoListContainerInterface) => {
     return (
         <>
             <List
@@ -19,9 +20,13 @@ const TodoListContainer = ({todos ,handleCheckValue}:TodoListContainerInterface)
                                 done={item.done}
                             />
                         </Typography.Text>
+                        <WorkStatus
+                            done={item.done}
+                        />
                             <TodoButton
                                 checkedId={item.id}
                                 handleCheckValue={handleCheckValue}
+                                delDoneTodo={delDoneTodo}
                             />
                     </List.Item>
                 )}

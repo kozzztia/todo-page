@@ -2,7 +2,7 @@ import React from "react"
 
 
 export interface FormInterface {
-    handleFormSubmit : ( e: React.SyntheticEvent<EventTarget> | any) => void;
+    handleFormSubmit : ( e: React.SyntheticEvent<EventTarget>) => void;
     task : string;
     setTask : React.Dispatch<React.SetStateAction<string>>;
 }
@@ -19,56 +19,29 @@ export interface FilterFormInterface {
 }
 export interface TodoListContainerInterface {
     todos: todoType[] | [],
-    handleCheckValue:handleCheckValueType,
+    handleCheckValue:HandleCheckValueType,
+    delDoneTodo:delDoneTodoType,
 }
 export interface TodoButtonInterface {
     checkedId:number,
-    handleCheckValue:handleCheckValueType,
+    handleCheckValue:HandleCheckValueType,
+    delDoneTodo:delDoneTodoType,
 }
 export interface TodoCheckboxInterface {
     checkedId:number,
-    handleCheckValue:handleCheckValueType,
+    handleCheckValue:HandleCheckValueType,
 }
 
-export type handleCheckValueType = (todosId: number)=> void
+export type HandleCheckValueType = (todosId : number)=> void
 
+export type DoneStatusType = {
+    done : boolean
+}
 
 export type todoType = {
     id : number,
     todoTask : string,
     done : boolean,
 }
+export type delDoneTodoType = (todosId : number)=> void
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-export type todoListTypes={
-    task: string,
-    todos : todoType[] | [],
-    setTodos : React.Dispatch<React.SetStateAction<[] | todoType[]>>,
-}
-export type todoItemType ={
-    keys:number,
-    item:todoType,
-    setTodos: React.Dispatch<React.SetStateAction<[] | todoType[]>>,
-    todos: todoType[] | [],
-    task:string;
-}
-export type todoTextType={
-    id:number,
-    todos : todoType[] | [],
-    text: string,
-    setTodos: React.Dispatch<React.SetStateAction<[] | todoType[]>>,
-}
