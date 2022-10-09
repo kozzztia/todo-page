@@ -1,4 +1,4 @@
-import React, {FC,useState} from 'react';
+import React, {FC, useCallback, useEffect, useState} from 'react';
 
 import './App.css';
 import 'antd/dist/antd.css';
@@ -25,6 +25,7 @@ const  App:FC = () => {
     const [filterValue , setFilterValue] = useState<number>(3)
 
 
+
     const handleFormSubmit=(e : React.SyntheticEvent<EventTarget>):void=>{
             e.preventDefault()
             setTodos((prev) =>
@@ -33,19 +34,16 @@ const  App:FC = () => {
             setTask("")
     }
 
+
+
     const handleCheckValue =(todosId:number):void =>{
-        setTodos((prev) =>
-            prev.map(item => item.id === todosId?{
-                id : item.id ,
-                todoTask : item.todoTask ,
-                done: !item.done}
-                :
-                item)
+        setTodos(todos.map(item => item.id === todosId?
+            {id : item.id , todoTask : item.todoTask , done: !item.done}
+            : item)
         )
     }
-    const delDoneTodo = (todosId : number) => {
-        setTodos((prev) =>
-            prev.filter(item => item.id !== todosId)
+    const delDoneTodo = (deleteTodosId : number):void=> {
+        setTodos( todos.filter(item => item.id !== deleteTodosId)
         )
     }
 

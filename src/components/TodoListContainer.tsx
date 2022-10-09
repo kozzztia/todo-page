@@ -1,28 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import {List, Typography} from "antd";
 import {TodoListContainerInterface, todoType} from "../types/type";
-import TodoButton from "./TodoButton";
+import TodoTools from "./TodoTools";
 import TodoText from "./TodoText";
 import WorkStatus from "./WorkStatus";
 
 const TodoListContainer = ({todos ,handleCheckValue , delDoneTodo , filterValue}:TodoListContainerInterface) => {
-    // const [newTodos , setNewTodos] = useState(todos)
-    //
-    // useEffect(():void=>{
-    //     switch (filterValue) {
-    //         case 1:
-    //             setNewTodos(todos.filter(item => item.done === true));
-    //             break;
-    //         case 2:
-    //             setNewTodos(todos.filter(item => item.done === false));
-    //             break;
-    //         case 3:
-    //             setNewTodos(todos);
-    //             break;
-    //         default:
-    //             return
-    //     }
-    // },[filterValue])
+
 
     return (
         <>
@@ -41,7 +25,8 @@ const TodoListContainer = ({todos ,handleCheckValue , delDoneTodo , filterValue}
                         <WorkStatus
                             done={item.done}
                         />
-                            <TodoButton
+                            <TodoTools
+                                done={item.done}
                                 checkedId={item.id}
                                 handleCheckValue={handleCheckValue}
                                 delDoneTodo={delDoneTodo}

@@ -2,11 +2,12 @@ import React, {useEffect} from 'react';
 import {Checkbox} from "antd";
 import {TodoCheckboxInterface} from "../types/type";
 
-const TodoCheckbox = ({checkedId , handleCheckValue}:TodoCheckboxInterface) => {
+const TodoCheckbox = ({checkedId , handleCheckValue , done}:TodoCheckboxInterface) => {
     return (
         <>
             <Checkbox
-                style={{paddingRight: "10px"}}
+                checked={done}
+                style={{paddingRight: "30px"}}
                 onChange={()=>{
                     handleCheckValue(checkedId)
                 }}

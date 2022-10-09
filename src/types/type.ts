@@ -23,14 +23,21 @@ export interface TodoListContainerInterface {
     delDoneTodo:delDoneTodoType,
     filterValue: number,
 }
-export interface TodoButtonInterface {
+export interface TodoToolsInterface {
     checkedId:number,
     handleCheckValue:HandleCheckValueType,
     delDoneTodo:delDoneTodoType,
+    done: boolean,
 }
+export interface TodoButtonInterface {
+    delDoneTodo:delDoneTodoType,
+    checkedId:number,
+}
+
 export interface TodoCheckboxInterface {
     checkedId:number,
     handleCheckValue:HandleCheckValueType,
+    done:boolean,
 }
 
 export type HandleCheckValueType = (todosId : number)=> void
