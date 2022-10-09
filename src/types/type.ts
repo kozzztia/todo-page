@@ -13,15 +13,15 @@ export interface SearchFormInterface {
 }
 
 export interface FilterFormInterface {
-    filterValue : number;
-    setFilterValue : React.Dispatch<React.SetStateAction<number>>
+    filterValue : string;
+    setFilterValue : React.Dispatch<React.SetStateAction<string>>
 
 }
 export interface TodoListContainerInterface {
     todos: todoType[] | [],
     handleCheckValue:HandleCheckValueType,
     delDoneTodo:delDoneTodoType,
-    filterValue: number,
+    filterValue: string,
 }
 export interface TodoToolsInterface {
     checkedId:number,
@@ -32,6 +32,7 @@ export interface TodoToolsInterface {
 export interface TodoButtonInterface {
     delDoneTodo:delDoneTodoType,
     checkedId:number,
+    done:boolean,
 }
 
 export interface TodoCheckboxInterface {

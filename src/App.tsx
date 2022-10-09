@@ -1,4 +1,4 @@
-import React, {FC, useCallback, useEffect, useState} from 'react';
+import React, {FC , useState} from 'react';
 
 import './App.css';
 import 'antd/dist/antd.css';
@@ -22,7 +22,7 @@ const  App:FC = () => {
         {id:4,todoTask:"one4",done:false},
     ])
     const [searchValue, setSearchValue] = useState<string>("")
-    const [filterValue , setFilterValue] = useState<number>(3)
+    const [filterValue , setFilterValue] = useState<string>('all')
 
 
 
@@ -71,7 +71,6 @@ const  App:FC = () => {
                 todos={todos}
                 handleCheckValue={handleCheckValue}
                 delDoneTodo={delDoneTodo}
-
             />
         </div>
   );

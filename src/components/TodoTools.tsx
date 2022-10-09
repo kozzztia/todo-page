@@ -14,6 +14,7 @@ const TodoTools = ({checkedId ,handleCheckValue , delDoneTodo , done}:TodoToolsI
                 handleCheckValue={handleCheckValue}
             />
             <TodoButton
+                done={done}
                 delDoneTodo={delDoneTodo}
                 checkedId={checkedId}
             />

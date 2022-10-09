@@ -10,13 +10,13 @@ const FilterForm = ({filterValue , setFilterValue} : FilterFormInterface) => {
                 }}
                 value={filterValue}
             >
-                <Radio value={1}>
+                <Radio value={'done'}>
                     done
                 </Radio>
-                <Radio value={2}>
+                <Radio value={'notDone'}>
                     not done
                 </Radio>
-                <Radio value={3}>
+                <Radio value={"all"}>
                     all
                 </Radio>
             </Radio.Group>
