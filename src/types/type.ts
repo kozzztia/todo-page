@@ -22,6 +22,7 @@ export interface TodoListContainerInterface {
     handleCheckValue:HandleCheckValueType,
     delDoneTodo:delDoneTodoType,
     filterValue: string,
+    searchValue :string,
 }
 export interface TodoToolsInterface {
     checkedId:number,

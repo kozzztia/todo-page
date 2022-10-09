@@ -71,6 +71,7 @@ const  App:FC = () => {
                 todos={todos}
                 handleCheckValue={handleCheckValue}
                 delDoneTodo={delDoneTodo}
+                searchValue={searchValue}
             />
         </div>
   );

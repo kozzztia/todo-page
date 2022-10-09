@@ -5,7 +5,7 @@ import TodoTools from "./TodoTools";
 import TodoText from "./TodoText";
 import WorkStatus from "./WorkStatus";
 
-const TodoListContainer = ({todos ,handleCheckValue , delDoneTodo , filterValue}:TodoListContainerInterface) => {
+const TodoListContainer = ({todos ,handleCheckValue , delDoneTodo , filterValue ,searchValue}:TodoListContainerInterface) => {
 
     const [filter ,setFilter] = useState<string>("all")
 
@@ -18,20 +18,26 @@ const TodoListContainer = ({todos ,handleCheckValue , delDoneTodo , filterValue}
             return todos
         }
     }
+    const searchFilteredTodos = (searchArg : string, filterArgs : string) =>{
+            if(searchValue.length >= 1){
+                return filteredTodos(filterArgs).filter(item => item.todoTask.includes(searchArg))
+            }else{
+                return filteredTodos(filterArgs)
+            }
+    }
+
     useEffect(()=>{
-        switch (filterValue) {
-            case "done" :setFilter(filterValue);break;
-            case "notDone": setFilter(filterValue);break;
-            case "all": setFilter(filterValue);break;
-            default : return
-        }
+        setFilter(filterValue)
     },[filterValue])
 
+    useEffect(()=>{
+
+    },[searchValue])
     return (
         <>
             <List
                 bordered
-                dataSource={filteredTodos(filter)}
+                dataSource={searchFilteredTodos(searchValue,filterValue)}
                 renderItem={item => (
                     <List.Item>
                         <Typography.Text>
