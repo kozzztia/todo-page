@@ -47,7 +47,6 @@ const  App:FC = () => {
         setTodos((prev) =>
             prev.filter(item => item.id !== todosId)
         )
-        // console.log(todosId)
     }
 
     return (
@@ -70,9 +69,11 @@ const  App:FC = () => {
             />
             <Divider orientation="center">TodoList</Divider>
             <TodoListContainer
+                filterValue={filterValue}
                 todos={todos}
                 handleCheckValue={handleCheckValue}
                 delDoneTodo={delDoneTodo}
+
             />
         </div>
   );

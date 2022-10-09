@@ -13,7 +13,7 @@ const TodoButton = ({checkedId ,handleCheckValue , delDoneTodo}:TodoButtonInterf
                 handleCheckValue={handleCheckValue}
             />
             <Button
-                onClick={(e)=>{
+                onMouseUp={(e)=>{
                     e.preventDefault()
                     delDoneTodo(checkedId)
                 }}
