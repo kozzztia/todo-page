@@ -6,12 +6,16 @@ import {SearchFormInterface} from "../types/type";
 
 
 const SearchForm = ({searchValue , setSearchValue} : SearchFormInterface) => {
+
+    const handOnSubmitForm = (e : React.SyntheticEvent<EventTarget>) : void =>{
+        e.preventDefault()
+        setSearchValue("")
+    }
+
     return (
         <form
             onSubmit={(e)=>{
-                e.preventDefault()
-                console.log(searchValue)
-                setSearchValue("")
+                handOnSubmitForm(e)
             }}
         >
             <Input
@@ -23,6 +27,7 @@ const SearchForm = ({searchValue , setSearchValue} : SearchFormInterface) => {
                 placeholder = "searched task"
             />
             <Button
+                disabled={true}
                 htmlType="submit"
                 type="primary"
                 icon={<SearchOutlined />}>

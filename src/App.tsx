@@ -17,9 +17,9 @@ const  App:FC = () => {
     const [task , setTask] = useState<string>("")
     const [todos , setTodos] = useState<todoType[] | []>([
         {id:1,todoTask:"one",done:false},
-        {id:2,todoTask:"one2",done:false},
-        {id:3,todoTask:"one3",done:false},
-        {id:4,todoTask:"one4",done:false},
+        {id:2,todoTask:"two",done:false},
+        {id:3,todoTask:"three",done:false},
+        {id:4,todoTask:"four",done:false},
     ])
     const [searchValue, setSearchValue] = useState<string>("")
     const [filterValue , setFilterValue] = useState<string>('all')

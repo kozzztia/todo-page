@@ -24,6 +24,15 @@ export interface TodoListContainerInterface {
     filterValue: string,
     searchValue :string,
 }
+
+export interface TodoListInterface {
+    searchFilteredTodos:(searchArg: string, filterArgs: string,)=>todoType[] | [],
+    searchValue: string,
+    filterValue: string,
+    handleCheckValue:HandleCheckValueType,
+    delDoneTodo: delDoneTodoType,
+}
+
 export interface TodoToolsInterface {
     checkedId:number,
     handleCheckValue:HandleCheckValueType,

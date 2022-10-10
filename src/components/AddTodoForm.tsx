@@ -4,17 +4,22 @@ import {Button , Input} from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 
 const AddTodoForm : React.FC<FormInterface> = ({setTask ,task ,handleFormSubmit} :FormInterface ) => {
+
+    const HandleOnSubmitTodoForm = (e : React.SyntheticEvent<EventTarget> ) : void =>{
+        if(task.length>1){
+            e.preventDefault()
+            handleFormSubmit(e)
+        }else{
+            e.preventDefault()
+            return
+        }
+    }
+
     return (
         <form
             className = "form"
             onSubmit={(e)=>{
-                if(task.length>1){
-                    e.preventDefault()
-                    handleFormSubmit(e)
-                }else{
-                    e.preventDefault()
-                    return
-                }
+                HandleOnSubmitTodoForm(e)
             }}>
             <Input
                 type = "text"
