@@ -19,6 +19,7 @@ const SearchForm = ({searchValue , setSearchValue} : SearchFormInterface) => {
             }}
         >
             <Input
+                prefix
                 onChange={(e)=>{
                     setSearchValue(e.target.value)
                 }}
@@ -26,12 +27,12 @@ const SearchForm = ({searchValue , setSearchValue} : SearchFormInterface) => {
                 type = "text"
                 placeholder = "searched task"
             />
-            <Button
-                disabled={true}
-                htmlType="submit"
-                type="primary"
-                icon={<SearchOutlined />}>
-            </Button>
+            {/*<Button*/}
+            {/*    disabled={true}*/}
+            {/*    htmlType="submit"*/}
+            {/*    type="primary"*/}
+            {/*    icon={<SearchOutlined />}>*/}
+            {/*</Button>*/}
         </form>
     );
 };

@@ -1,7 +1,5 @@
 import React from 'react';
-import {Button} from "antd";
 import TodoCheckbox from "./TodoCheckbox";
-import {DeleteOutlined} from "@ant-design/icons";
 import {TodoToolsInterface} from "../types/type";
 import TodoButton from "./TodoButton"
 

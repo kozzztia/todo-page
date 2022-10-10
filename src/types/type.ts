@@ -1,4 +1,5 @@
 import React from "react"
+import {createId} from "../support/support";
 
 
 export interface FormInterface {
@@ -63,6 +64,14 @@ export type todoType = {
     id : number,
     todoTask : string,
     done : boolean,
+}
+//------------------- auth
+
+export interface usersInterface {
+    nikName : string,
+    password : string,
+    isAuth : boolean,
+    id: number,
 }
 
 

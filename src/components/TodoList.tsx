@@ -12,7 +12,8 @@ const TodoList = ({searchFilteredTodos,searchValue,filterValue,handleCheckValue,
             bordered
             dataSource={searchFilteredTodos(searchValue,filterValue)}
             renderItem={item => (
-                <List.Item>
+                <List.Item
+                >
                     <Typography.Text>
                         <TodoText
                             id={item.id}

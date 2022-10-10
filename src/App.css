@@ -24,5 +24,12 @@ form{
 button{
   min-width: 50px;
 }
+.TodoApp{
+  border: 1px solid black;
+  padding: 0 10px 10px;
+}
+
+
+
 
 
