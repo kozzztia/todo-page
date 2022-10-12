@@ -1,6 +1,6 @@
 import React from 'react';
 import { SearchOutlined } from '@ant-design/icons';
-import {Button ,Input} from "antd";
+import {Button, Form, Input} from "antd";
 import {SearchFormInterface} from "../types/type";
 
 
@@ -13,8 +13,8 @@ const SearchForm = ({searchValue , setSearchValue} : SearchFormInterface) => {
     }
 
     return (
-        <form
-            onSubmit={(e)=>{
+        <Form
+            onFinish={(e)=>{
                 handOnSubmitForm(e)
             }}
         >
@@ -33,7 +33,7 @@ const SearchForm = ({searchValue , setSearchValue} : SearchFormInterface) => {
             {/*    type="primary"*/}
             {/*    icon={<SearchOutlined />}>*/}
             {/*</Button>*/}
-        </form>
+        </Form>
     );
 };
 
