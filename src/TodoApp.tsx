@@ -10,7 +10,7 @@ import AddTodoForm from "./components/AddTodoForm"
 import TodoListContainer from "./components/TodoListContainer";
 import SearchForm from "./components/SearchForm"
 import FilterForm from "./components/FilterForm";
-import MainPage from "./components/MainPage";
+
 import {Route, Routes} from "react-router-dom";
 import TodoPage from "./components/TodoPage";
 
@@ -70,7 +70,6 @@ const  TodoApp:FC = () => {
                 setFilterValue = {setFilterValue}
             />
             <Divider orientation="center">TodoList   : {todos.length}</Divider>
-
             <div>
                 <Routes>
                     <Route path="/" element={<TodoListContainer
