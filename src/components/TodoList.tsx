@@ -14,7 +14,7 @@ const TodoList = ({searchFilteredTodos,searchValue,filterValue,handleCheckValue,
             renderItem={item => (
                 <List.Item
                 >
-                    <Typography.Text>
+                    <Typography.Text >
                         <TodoText
                             id={item.id}
                             todoTask={item.todoTask}

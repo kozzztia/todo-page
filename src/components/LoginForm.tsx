@@ -6,12 +6,18 @@ import {createId} from "../support/support";
 
 
 const LoginForm = ({users , setIsAus} : LoginFormInterface) => {
-    const [logUserName , setLogUserName] = React.useState<string>("kozzztia")
-    const [logPassword , setLogPassword] = React.useState<string>("12345")
+    const [logUserName , setLogUserName] = React.useState<string>("")
+    const [logPassword , setLogPassword] = React.useState<string>("")
+
+    const setAuthAndSetCorrect = (value :  boolean)=>[
+        setIsAus(value),
+    ]
+
     const LoginFormSubmit = ()=>{
         users.map((item , i) =>
             item.nikName === logUserName || item.password === logPassword?
-            setIsAus(true)
+                setAuthAndSetCorrect(true)
+
             :
             setIsAus(false)
         )
@@ -26,7 +32,9 @@ const LoginForm = ({users , setIsAus} : LoginFormInterface) => {
                 wrapperCol={{ span: 16 }}
                 onFinish={(e)=>LoginFormSubmit()}
             >
+
                 <Divider orientation="center">Login</Divider>
+
                 <Form.Item
                     label="Username"
                     name="username"

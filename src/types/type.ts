@@ -82,4 +82,8 @@ export interface LoginEventInterface {
     username : string;
     password : string;
 }
-
+export type OneTodoType = {
+    id : number,
+    todoTask ?: string,
+    done ?: boolean,
+}

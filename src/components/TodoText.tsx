@@ -1,11 +1,17 @@
 import React from 'react';
 import {todoType} from "../types/type";
+import {NavLink} from "react-router-dom";
 
 
-const TodoText = ({id,todoTask}:todoType) => {
+const TodoText = ({id,todoTask , done}:todoType) => {
     return (
         <p>
-            {id} : {todoTask}
+            {id} :
+            <NavLink
+                to={`/${id}`}>
+                {todoTask}
+            </NavLink>
+
         </p>
     );
 };

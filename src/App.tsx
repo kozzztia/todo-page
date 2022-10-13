@@ -14,7 +14,7 @@ import {users} from "./state";
 
 
 const App = () => {
-    const [isAuth , setIsAus] = useState(false)
+    const [isAuth , setIsAus] = useState(true)
     const [usersPersons , setUsersPersons] = useState <usersInterface[]>(users)
     return (
         <Layout className="App">
