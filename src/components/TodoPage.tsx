@@ -1,18 +1,15 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 import {OneTodoType} from "../types/type";
-import {Divider, Image, List} from "antd";
-import {Typography} from "antd";
+import {Divider, List} from "antd";
 import {CheckOutlined, StopOutlined} from "@ant-design/icons";
 
-const { Title } = Typography;
 
 const TodoPage = ({id , todoTask , done}:OneTodoType) => {
     return (
         <List
             bordered
         >
-            {/*<CheckOutlined />*/}
             <Divider orientation="left">{todoTask} {done?<CheckOutlined />:<StopOutlined />}</Divider>
                 <p> {id} : "Lorem ipsum dolor sit amet,
                     consectetur adipiscing elit, sed do

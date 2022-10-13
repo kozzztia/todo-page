@@ -1,6 +1,6 @@
 import React from 'react';
 import {FormInterface} from "../types/type";
-import {Button, Form, Input} from "antd";
+import {Button, Input} from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 
 const AddTodoForm : React.FC<FormInterface> = ({setTask ,task ,handleFormSubmit} :FormInterface ) => {

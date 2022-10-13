@@ -1,7 +1,6 @@
-import React, {useEffect} from 'react';
-import {Button, Checkbox, Divider, Form, Input} from 'antd';
-import {LoginEventInterface, LoginFormInterface, usersInterface} from "../types/type";
-import {createId} from "../support/support";
+import React from 'react';
+import {Button, Divider, Form, Input} from 'antd';
+import { LoginFormInterface} from "../types/type";
 
 
 
@@ -14,12 +13,11 @@ const LoginForm = ({users , setIsAus} : LoginFormInterface) => {
     ]
 
     const LoginFormSubmit = ()=>{
-        users.map((item , i) =>
-            item.nikName === logUserName || item.password === logPassword?
+        users.map((item) =>
+            item.nikName === logUserName && item.password === logPassword?
                 setAuthAndSetCorrect(true)
-
-            :
-            setIsAus(false)
+                :
+                 item
         )
     }
 

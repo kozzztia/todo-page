@@ -1,6 +1,5 @@
 import React from 'react';
-import { SearchOutlined } from '@ant-design/icons';
-import {Button, Form, Input} from "antd";
+import {Form, Input} from "antd";
 import {SearchFormInterface} from "../types/type";
 
 
