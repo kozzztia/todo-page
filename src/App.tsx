@@ -4,27 +4,33 @@ import 'antd/dist/antd.css';
 import {usersInterface} from "./types/type";
 import {createId} from "./support/support";
 import TodoApp from "./TodoApp";
-import {Button , Layout} from "antd";
+import {Button, Divider, Layout} from "antd";
 import LoginForm from "./components/LoginForm";
+import {users} from "./state";
 
-const users : usersInterface[] = [
-    {nikName : "kozzztia" , password : '12345' , isAuth: false , id:createId()},
-    {nikName : "admin" , password : '123456' , isAuth: false , id:createId()},
-    {nikName : "user" , password : '1234567' , isAuth: false , id:createId()},
-]
+
+
 
 
 
 const App = () => {
     const [isAuth , setIsAus] = useState(false)
+    const [usersPersons , setUsersPersons] = useState <usersInterface[]>(users)
     return (
         <Layout className="App">
+            <Divider orientation="center">TodoList</Divider>
             <Button
                 type="primary"
-                onClick={()=>{setIsAus(prev=>!prev)}}
+                onClick={()=>{setIsAus(false)}}
             >
-                {isAuth?<>Login</>:<>Logout</>}</Button>
-                {isAuth?<TodoApp/>:<LoginForm/>}
+                {isAuth?<>Logout</>:<>Login</>}</Button>
+                {isAuth?
+                    <TodoApp/>
+                    :
+                    <LoginForm
+                        users={users}
+                        setIsAus={setIsAus}
+                    />}
 
         </Layout>
     );

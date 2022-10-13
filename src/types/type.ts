@@ -73,5 +73,13 @@ export interface usersInterface {
     isAuth : boolean,
     id: number,
 }
+export interface LoginFormInterface {
+    users: usersInterface[],
+    setIsAus:  React.Dispatch<React.SetStateAction<boolean>>,
+}
 
+export interface LoginEventInterface {
+    username : string;
+    password : string;
+}
 

@@ -1,15 +1,30 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Button, Checkbox, Divider, Form, Input} from 'antd';
+import {LoginEventInterface, LoginFormInterface, usersInterface} from "../types/type";
+import {createId} from "../support/support";
 
-const LoginForm = () => {
+
+
+const LoginForm = ({users , setIsAus} : LoginFormInterface) => {
+    const [logUserName , setLogUserName] = React.useState<string>("kozzztia")
+    const [logPassword , setLogPassword] = React.useState<string>("12345")
+    const LoginFormSubmit = ()=>{
+        users.map((item , i) =>
+            item.nikName === logUserName || item.password === logPassword?
+            setIsAus(true)
+            :
+            setIsAus(false)
+        )
+    }
+
+
     return (
         <>
             <Form
                 name="basic"
-                labelCol={{ span: 8 }}
+                labelCol={{ span: 7 }}
                 wrapperCol={{ span: 16 }}
-                onFinish={(e)=>console.log(e)}
-                autoComplete="off"
+                onFinish={(e)=>LoginFormSubmit()}
             >
                 <Divider orientation="center">Login</Divider>
                 <Form.Item
@@ -17,7 +32,13 @@ const LoginForm = () => {
                     name="username"
                     rules={[{ required: true, message: 'Please input your username!' }]}
                 >
-                    <Input />
+                    <Input
+                        placeholder="1"
+                        onChange={(e)=>{
+                            setLogUserName(e.target.value)
+                        }}
+                        value = {logUserName}
+                    />
                 </Form.Item>
 
                 <Form.Item
@@ -25,12 +46,18 @@ const LoginForm = () => {
                     name="password"
                     rules={[{ required: true, message: 'Please input your password!' }]}
                 >
-                    <Input.Password />
+                    <Input.Password
+                        placeholder="1"
+                        onChange={(e)=>{
+                            setLogPassword(e.target.value)
+                        }}
+                        value = {logPassword}
+                    />
                 </Form.Item>
-                <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+                <Form.Item wrapperCol={{ offset: 4, span: 16 }}>
                     <Button type="primary"
                             htmlType="submit">
-                        Login
+                        submit
                     </Button>
                 </Form.Item>
             </Form>

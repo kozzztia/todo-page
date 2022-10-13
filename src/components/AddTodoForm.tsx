@@ -16,9 +16,9 @@ const AddTodoForm : React.FC<FormInterface> = ({setTask ,task ,handleFormSubmit}
     }
 
     return (
-        <Form
+        <form
             className = "form"
-            onFinish={(e)=>{
+            onSubmit={(e)=>{
                 HandleOnSubmitTodoForm(e)
             }}>
             <Input
@@ -34,7 +34,7 @@ const AddTodoForm : React.FC<FormInterface> = ({setTask ,task ,handleFormSubmit}
                 type="primary"
                 icon={<PlusOutlined />}
             />
-        </Form>
+        </form>
     );
 };
 
