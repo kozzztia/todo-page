@@ -4,7 +4,8 @@ import 'antd/dist/antd.css';
 import {usersInterface} from "./types/type";
 import {createId} from "./support/support";
 import TodoApp from "./TodoApp";
-import {Button} from "antd";
+import {Button , Layout} from "antd";
+import LoginForm from "./components/LoginForm";
 
 const users : usersInterface[] = [
     {nikName : "kozzztia" , password : '12345' , isAuth: false , id:createId()},
@@ -17,14 +18,15 @@ const users : usersInterface[] = [
 const App = () => {
     const [isAuth , setIsAus] = useState(false)
     return (
-        <div className="App">
+        <Layout className="App">
             <Button
                 type="primary"
                 onClick={()=>{setIsAus(prev=>!prev)}}
-            > {isAuth?<>+</>:<>-</>}</Button>
-            {isAuth?<TodoApp/>:<p>hello</p>}
+            >
+                {isAuth?<>Login</>:<>Logout</>}</Button>
+                {isAuth?<TodoApp/>:<LoginForm/>}
 
-        </div>
+        </Layout>
     );
 };
 

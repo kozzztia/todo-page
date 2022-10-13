@@ -15,7 +15,7 @@
   box-sizing: border-box;
   font-weight: bold;
 }
-form{
+.form{
   display: flex;
   flex-direction: row;
   margin-bottom: 5px;
