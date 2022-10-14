@@ -27,6 +27,7 @@ const LoginForm = ({users , setIsAus} : LoginFormInterface) => {
                 labelCol={{ span: 7 }}
                 wrapperCol={{ span: 16 }}
                 onFinish={(e)=>LoginFormSubmit()}
+
             >
 
                 <Divider orientation="center">Login</Divider>
@@ -56,6 +57,7 @@ const LoginForm = ({users , setIsAus} : LoginFormInterface) => {
                             setLogPassword(e.target.value)
                         }}
                         value = {logPassword}
+                        autoComplete="off"
                     />
                 </Form.Item>
                 <Form.Item wrapperCol={{ offset: 4, span: 16 }}>

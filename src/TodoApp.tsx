@@ -53,7 +53,7 @@ const  TodoApp:FC = () => {
 
     return (
         <div className="TodoApp">
-            <Divider orientation="center">Add new todo or find</Divider>
+            <Divider orientation="center">Add new todo or find </Divider>
             <AddTodoForm
                 setTask = {setTask}
                 task = {task}

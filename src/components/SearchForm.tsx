@@ -18,7 +18,6 @@ const SearchForm = ({searchValue , setSearchValue} : SearchFormInterface) => {
             }}
         >
             <Input
-                prefix
                 onChange={(e)=>{
                     setSearchValue(e.target.value)
                 }}

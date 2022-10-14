@@ -3,6 +3,7 @@ import React from 'react';
 import {TodoListContainerInterface, todoType} from "../types/type";
 import TodoList from "./TodoList";
 
+
 const TodoListContainer = ({todos ,handleCheckValue , delDoneTodo , filterValue ,searchValue}:TodoListContainerInterface) => {
 
     const filteredTodos = (filterArg : string) =>{
