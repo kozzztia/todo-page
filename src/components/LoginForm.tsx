@@ -14,10 +14,8 @@ const LoginForm = ({users , setIsAus} : LoginFormInterface) => {
 
     const LoginFormSubmit = ()=>{
         users.map((item) =>
-            item.nikName === logUserName && item.password === logPassword?
+            item.nikName === logUserName && item.password === logPassword &&
                 setAuthAndSetCorrect(true)
-                :
-                 item
         )
     }
 

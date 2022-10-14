@@ -78,10 +78,6 @@ export interface LoginFormInterface {
     setIsAus:  React.Dispatch<React.SetStateAction<boolean>>,
 }
 
-export interface LoginEventInterface {
-    username : string;
-    password : string;
-}
 export type OneTodoType = {
     id : number,
     todoTask ?: string,

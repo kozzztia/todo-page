@@ -81,7 +81,7 @@ const  TodoApp:FC = () => {
                     />}/>
                     {
                         todos.map(item =>
-                            <Route  key={item.id}path={`/${item.id}`} element={<TodoPage
+                            <Route  key={item.id} path={`/${item.id}`} element={<TodoPage
                             id={item.id}
                             todoTask={item.todoTask}
                             done={item.done}

@@ -26,12 +26,6 @@ const SearchForm = ({searchValue , setSearchValue} : SearchFormInterface) => {
                 type = "text"
                 placeholder = "searched task"
             />
-            {/*<Button*/}
-            {/*    disabled={true}*/}
-            {/*    htmlType="submit"*/}
-            {/*    type="primary"*/}
-            {/*    icon={<SearchOutlined />}>*/}
-            {/*</Button>*/}
         </Form>
     );
 };
